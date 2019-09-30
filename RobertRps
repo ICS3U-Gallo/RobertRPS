@@ -1,0 +1,48 @@
+from random import randint
+print("Welcome to the premier rock, paper, scissors game. Play till 10!")
+t = ["Rock", "Paper", "Scissors"]
+player_wins = 0
+computer_wins = 0
+ties = 0
+number_of_games = 0
+
+while number_of_games <= 10:
+ player_move = input("Rock, Paper, Scissors?")
+ computer_move = t[randint(0,2)]
+ if player_move == computer_move:
+          print("Tie!")
+          number_of_games = number_of_games + 1
+          ties = ties + 1
+ elif player_move == "Rock":
+          if computer_move == "Paper":
+            print("You lost!")
+            number_of_games = number_of_games + 1
+            computer_wins = computer_wins + 1
+          else:
+            print("You win!")
+            number_of_games = number_of_games + 1
+            player_wins = player_wins + 1
+ elif player_move == "Paper":
+          if computer_move == "Scissors":
+           print("You lose!")
+           number_of_games = number_of_games + 1
+           computer_wins = computer_wins + 1
+          else:
+            print("You win!")
+            player_wins = player_wins + 1
+            number_of_games = number_of_games + 1
+            
+ elif player_move == "Scissors":
+          if computer_move == "Rock":
+            print("You lost!")
+            number_of_games = number_of_games + 1
+            computer_wins = computer_wins + 1
+          else:
+            print("You win!")
+            player_wins = player_wins + 1
+            number_of_games = number_of_games + 1
+ else:
+            print("Make sure the spelling is correct!")
+
+
+print("You won " + str(player_wins) + " times, lost " + str(computer_wins) + " times, and tied " + str(ties) + " times! Good playing!")
